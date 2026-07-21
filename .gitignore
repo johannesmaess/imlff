@@ -1,0 +1,39 @@
+.extra_python_packages
+
+# development
+__pycache__
+.DS_Store
+.ipynb_checkpoints/*
+
+# datasets & intermediate files
+**.db
+tmp/*
+splitting.lock
+
+# logs
+logs/*
+l19/*
+lightning_logs/*
+*/lightning_logs/
+wandb/*
+**/logs/
+
+*.png
+*.svg
+*.html
+
+artifacts
+*.egg-info
+
+launch.json
+
+wandb
+
+*.pt
+
+*.sentinel
+*.log
+*.out
+
+# private
+keys.py

@@ -1,0 +1,3 @@
+[submodule "schnetpack"]
+	path = schnetpack
+	url = https://github.com/johannesmaess/schnetpack.git

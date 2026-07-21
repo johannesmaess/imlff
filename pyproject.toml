@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "imlff"
+version = "0.1.0"
+description = "Equilibrium models for quantum chemistry"
+dependencies = [
+    # NOTE: schnetpack is intentionally not listed here. This project uses the
+    # fork in the ./schnetpack git submodule; install it separately with
+    # `pip install -e schnetpack` (the PyPI schnetpack lacks the fork's features).
+
+    # core ML / DEQ stack
+    "torch",
+    "pytorch-lightning",
+    "torchmetrics",
+    "torchdeq",
+    "ase",
+
+    # numerics / data
+    "numpy",
+    "scipy",
+    "pandas",
+    "h5py",
+    "MDAnalysis",
+
+    # experiment tracking & io
+    "wandb>=0.12.10",
+    "requests",
+    "filelock",
+    "tqdm",
+
+    # visualization
+    "matplotlib",
+    "seaborn",
+    "cmcrameri",
+
+    # html-report -> pdf export (imlff/analysis/to_pdf.py)
+    "playwright",
+
+    # notebooks
+    "jupyter",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
