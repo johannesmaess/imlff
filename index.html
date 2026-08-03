@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implicit Machine Learning Force Fields</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <!-- <nav>
+        <div class="container nav-container">
+            <a href="#" class="logo">HFM</a>
+            <div class="nav-links">
+                <a href="#abstract">Abstract</a>
+                <a href="#method">Method</a>
+                <a href="#results">Results</a>
+                <a href="#resources">Resources</a>
+            </div>
+        </div>
+    </nav> -->
+
+    <header class="hero">
+        <div class="container">
+            <h1 class="title">Implicit Machine Learning Force Fields</h1>
+            <p class="subtitle">Accelerate Molecular Dynamics Simulations</p>
+
+            <div class="authors">
+                <span class="author">Johannes Maeß<sup>1,2</sup></span>
+                <span class="author">Leon Werner<sup>1,2</sup></span>
+                <span class="author">J. Thorben Frank<sup>1,2</sup></span>
+                <span class="author">Winfried Ripken<sup>1,2</sup></span>
+                <span class="author">Martin Michajlow<sup>1,2</sup></span>
+                <span class="author">Joshua Futterer<sup>1,2</sup></span>
+                <span class="author">Klaus-Robert Müller<sup>†&nbsp;1,2,3,4</sup></span>
+                <span class="author">Stefan Chmiela<sup>†&nbsp;1,2</sup></span>
+            </div>
+
+            <div class="affiliations">
+                <p>
+                    <sup>1</sup>&thinsp;BIFOLD, Berlin &nbsp;
+                    <sup>2</sup>&thinsp;Machine Learning Group, TU Berlin &nbsp;
+                    <sup>3</sup>&thinsp;MPI for Informatics, Saarbrücken
+                </p>
+                <p>
+                    <sup>4</sup>&thinsp;Department of Artificial Intelligence, Korea University, Seoul &nbsp;
+                    <sup>†</sup>&thinsp;Corresponding authors.
+                </p>
+            </div>
+
+            <div class="action-buttons">
+                <a href="https://arxiv.org/abs/2607.29158" class="btn-pill">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                    arXiv
+                </a>
+                <a href="https://github.com/johannesmaess/imlff" class="btn-pill">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    Code
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="teaser-section">
+        <div class="container">
+            <div class="figure-wrapper">
+                <img src="assets/streamplot.svg" alt="Streamplot">
+            </div>
+            <div class="step-boxes">
+                <div class="step-box">
+                    <strong>1st MD step:</strong>
+                    Many iterations<br>to converge
+                </div>
+                <div class="step-box">
+                    <strong>2nd MD step:</strong>
+                    Reuse of fixed-point<br>&rarr; 2&ndash;5 iterations
+                </div>
+                <div class="step-box">
+                    <strong>3rd+ MD step:</strong>
+                    Linear extrapolation<br>&rarr; ∼1 iteration
+                </div>
+            </div>
+            <!-- <p class="caption">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            </p> -->
+        </div>
+    </section>
+
+    <section id="bibtex">
+        <div class="container">
+            <h2>Citation</h2>
+            <div class="bibtex-box">
+                <button type="button" class="btn-copy" id="copy-bibtex" aria-label="Copy BibTeX">
+                    <svg class="icon-clipboard" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1"></path></svg>
+                    <svg class="icon-check hidden" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <div class="bibtex-scroll">
+<pre><code id="bibtex-content">@article{maess2026imlff,
+  title={Implicit Machine Learning Force Fields Accelerate Molecular Dynamics Simulations},
+  author={Mae{\ss}, Johannes and Werner, Leon and Frank, J. Thorben and Ripken, Winfried
+  and Michajlow, Martin and Futterer, Joshua and M{\"u}ller, Klaus-Robert and Chmiela, Stefan},
+  journal={arXiv preprint arXiv:2607.29158},
+  year={2026}
+} </code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('copy-bibtex').addEventListener('click', function () {
+            var code = document.getElementById('bibtex-content');
+            var text = code.textContent;
+            navigator.clipboard.writeText(text).then(function () {
+                var btn = document.getElementById('copy-bibtex');
+                btn.classList.add('copied');
+                btn.querySelector('.icon-clipboard').classList.add('hidden');
+                btn.querySelector('.icon-check').classList.remove('hidden');
+                setTimeout(function () {
+                    btn.classList.remove('copied');
+                    btn.querySelector('.icon-clipboard').classList.remove('hidden');
+                    btn.querySelector('.icon-check').classList.add('hidden');
+                }, 2000);
+            });
+        });
+    </script>
+
+    <footer>
+        <div class="container">
+            <a href="https://arxiv.org/abs/2607.29158">Paper (arXiv)</a>
+            &nbsp;|&nbsp;
+            <a href="https://github.com/johannesmaess/imlff">Code (GitHub)</a>
+        </div>
+    </footer>
+
+</body>
+</html>
